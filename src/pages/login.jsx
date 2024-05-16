@@ -8,11 +8,11 @@ function Login() {
 </h1>
 <div className='mt-4'>
     {/* <label className='block text-base mb-2' htmlFor="username">Username</label> */}
-    <input type="text"  className=' w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600' placeholder='Enter Your Username'/>
+    <input type="text"  className=' w-full text-base border-b  py-1 focus:outline-none focus:ring-0 focus:border-gray-600' placeholder='Enter Your Username'/>
 </div>
-<div className='mt-4'>
+<div className='mt-5'>
     {/* <label className='block text-base mb-2' htmlFor="password">Password</label> */}
-    <input type="password"  className=' w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600' placeholder='Enter Your Password'/>
+    <input type="password"  className=' w-full border-b text-base  py-1 focus:outline-none focus:ring-0 focus:border-gray-600' placeholder='Enter Your Password'/>
 </div>
 <div className='mt-3 flex justify-between items-center'>
  
@@ -22,7 +22,7 @@ function Login() {
 </div>
 </div>
 <div className='mt-5'>
-    <button type='submit' className='border-2 border-blue-700 bg-blue-700 text-white py-1 w-full rounded-md hover:bg-transparent hover:text-stone-950 font-semibold'>Login</button>
+    <button type='submit' className='border-2 border-blue-500 bg-blue-500 text-white py-1 w-full  hover:bg-transparent hover:text-stone-950 font-semibold'>LOG IN</button>
 
 </div>
 

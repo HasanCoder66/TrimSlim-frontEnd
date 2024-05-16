@@ -1,17 +1,21 @@
+import Home from "./pages/Home"
 import Login from "./pages/login"
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
 
 
   return (
-    // <>
-    //  <p className="text-xl font-bold text-red">
-    //   salik
-    //  </p>
+
+    <BrowserRouter>
   
-    // </>
-    <Login/>
+    <Routes>
+      <Route path='/' element={<Login />} />
+      <Route path='/home' element={<Home />} />
+    
+    </Routes>
+  </BrowserRouter>
+   
   )
 }
 
