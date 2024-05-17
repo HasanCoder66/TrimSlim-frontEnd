@@ -130,6 +130,18 @@ export default function DataGridDemo() {
     return newRow;
   };
 
+          <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">
+            Search
+          </span>
+        </label>
+      </div>
+      <div
+        className="ag-theme-quartz" // applying the grid theme
+        style={{ height: 500 }} // the grid will fill the size of the parent container
+      >
+        <AgGridReact className="border borde" rowData={rowData} columnDefs={colDefs} />
+      </div>
+
   return (
     <div className='bg-white ml-5 mr-5 mb-5 py-3'>
       <h1 className='text-md font-semibold mx-8'>Recent Patients</h1>
@@ -180,6 +192,7 @@ export default function DataGridDemo() {
           }}
         />
       </Box>
+
     </div>
   );
 }
