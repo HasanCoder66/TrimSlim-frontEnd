@@ -46,7 +46,7 @@ const Box1 = () => {
         className="ag-theme-quartz" // applying the grid theme
         style={{ height: 500 }} // the grid will fill the size of the parent container
       >
-        <AgGridReact rowData={rowData} columnDefs={colDefs} />
+        <AgGridReact className="border borde" rowData={rowData} columnDefs={colDefs} />
       </div>
     </div>
   );
