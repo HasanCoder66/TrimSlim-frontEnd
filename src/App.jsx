@@ -1,5 +1,6 @@
 import BodyMain from "./components/BodyMain"
 import Footer from "./components/Footer"
+import GenerateInvoice from "./components/GenerateInvoice"
 import Header from "./components/Header"
 import PasswardSetting from "./components/PasswardSetting"
 import Home from "./pages/Home"
@@ -17,6 +18,7 @@ function App() {
       <Route path='/' element={<Login />} />
       <Route path='/home' element={<Home />} />
       <Route path='/home/footer' element={<PasswardSetting />} />
+      <Route path='/home/generateInvoice' element={<GenerateInvoice />} />
       
     
     </Routes>

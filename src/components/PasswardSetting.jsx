@@ -1,13 +1,14 @@
 import React from "react";
 import { Settings } from "@mui/icons-material";
-import { useLocation } from "react-router-dom";
-import Link from '@mui/material/Link';
+import { useLocation,Link } from "react-router-dom";
+
 
 
 const PasswardSetting = () => {
   const location = useLocation();
   const currentPath = location.pathname;
-  console.log(currentPath)
+  const pathSpilit = currentPath.split('/').slice(1)
+  console.log(pathSpilit)
   return (
     <div className="h-screen bg-[#edf1f5]">
       <div className="flex items-center justify-between font-bold text-3xl text-[#CECECE] p-5 bg-white">
@@ -16,13 +17,11 @@ const PasswardSetting = () => {
           Change Password
         </div>
         <div>
+          <Link to= "/home">
+            {currentPath}
+          </Link>
           
-          <Link
-          underline="hover"
-          sx={{ display: 'flex', alignItems: 'center' }}
-          color="inherit"
-          href={{currentPath}}
-        >
+         
         </div>
       </div>
       <div className="flex flex-col bg-white p-12 m-5 w-full rounded-sm ">
