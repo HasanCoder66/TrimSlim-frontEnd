@@ -49,13 +49,13 @@ const GenerateInvoice = () => {
     </nav>
         </div>
       </div>
-      <div className="flex flex-col bg-white p-12 m-5 w-full rounded-sm ">
-        <div className="flex flex-row  p-5 ">
-          <div className="flex w-3/5 items-center justify-around mb-4 ">
+      <div className="flex flex-col bg-white p-10 m-5 w-90 rounded-sm ">
+        <div className="flex flex-row  p-3 ">
+          <div className="flex w-full items-center  mb-4 ">
             <div className=" text-center">
               <label
                 htmlFor="oldPassword"
-                className="text-sm font-bold text-slate-500"
+                className="text-sm font-bold text-slate-500 mr-3"
               >
                 Appointment #
               </label>
@@ -65,14 +65,14 @@ const GenerateInvoice = () => {
                 disablePortal
                 id="combo-box-demo"
                 options={top100Films}
-                sx={{ width: 500 }}
+                sx={{ width: 500 , padding: "0px" }}
                 renderInput={(params) => (
                   <TextField {...params} label="Please Select" />
                 )}
               />
             </div>
           </div>
-          <div className="flex w-2/5 items-center justify-center mb-4">
+          <div className="flex w-1/5 items-center justify-center mb-4">
             <div className=" text-center">
               <label
                 htmlFor="oldPassword"

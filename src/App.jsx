@@ -41,10 +41,10 @@ const UnauthenticatedRoutes = () => {
     <Routes>
       <Route path='/' element={<Login />} />
 
-      <Route path='/home' element={<Home />} />
+      {/* <Route path='/home' element={<Home />} />
       <Route path='/home/footer' element={<PasswardSetting />} />
       <Route path='/home/generateInvoice' element={<GenerateInvoice />} />
-      <Route path='/home/generateInvoice/footer' element={<PasswardSetting />} />
+      <Route path='/home/generateInvoice/footer' element={<PasswardSetting />} /> */}
       
     
     </Routes>
@@ -71,6 +71,14 @@ const router = createBrowserRouter([
       {
         path: "/completedinvoices",
         element: <CompletedInvoices />
+      },
+      {
+        path: "/accountsetting",
+        element: <PasswardSetting />
+      },
+      {
+        path: "/generateinvoice",
+        element: <GenerateInvoice />
       },
     ]
   },
