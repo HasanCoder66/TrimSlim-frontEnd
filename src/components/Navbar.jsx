@@ -1,5 +1,6 @@
 import {  PowerSettingsNew, Settings } from '@mui/icons-material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -8,7 +9,7 @@ function Navbar() {
     <img src="../src/assets/logo.png" alt="" className='h-16' />
   </div>
   <div className='flex px-5'>
-    <button className='text-white px-5 font-semibold text-md'><Settings style={{fontSize:"35px"}}/>Account Settings</button>
+   <button className='text-white px-5 font-semibold text-md'><Settings style={{fontSize:"35px"}}/>  <Link to={'/accountsetting'}>AccountSetting </Link> </button> 
     <button className='text-white font-semibold text-md'><PowerSettingsNew style={{fontSize:"35px"}}/>Logout</button>
   </div>
     </div>

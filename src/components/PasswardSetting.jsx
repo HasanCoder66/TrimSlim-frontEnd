@@ -10,7 +10,7 @@ const PasswardSetting = () => {
   const pathSegments = currentPath.split('/').filter(segment => segment);
   return (
     <div className="h-screen bg-[#edf1f5]">
-      <div className="flex items-center justify-between font-bold text-3xl text-[#CECECE] p-5 bg-white">
+      <div className="flex items-center justify-between font-bold text-3xl text-[#CECECE] p-4 bg-white">
         <div>
           <Settings style={{ fontSize: "35px" }} />
           Change Password
@@ -35,9 +35,9 @@ const PasswardSetting = () => {
          
         </div>
       </div>
-      <div className="flex flex-col bg-white p-12 m-5 w-full rounded-sm ">
+      <div className="flex flex-col bg-white p-12 m-2 w-70 rounded-sm ">
         <div className="flex justify-around items-center mb-4  ">
-          <div className="w-2/5 text-center">
+          <div className="w-1/5 text-center mb-6">
             <label
               htmlFor="oldPassword"
               className="text-sm font-bold text-slate-500"
@@ -58,7 +58,7 @@ const PasswardSetting = () => {
           </div>
         </div>
         <div className="flex justify-around items-center my-4">
-          <div className="w-2/5 text-center">
+          <div className="w-1/5 text-center mb-6">
             <label
               htmlFor="oldPassword"
               className="text-sm font-bold text-slate-500"
@@ -79,7 +79,7 @@ const PasswardSetting = () => {
           </div>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-5">
           <button className="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-5 rounded">
             Submit
           </button>

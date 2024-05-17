@@ -42,7 +42,7 @@ const Menus = [
       },
       {
         title: 'Generate Invoice',
-        src:'completedinvoices'
+        src:'generateinvoice'
       
       },
       
