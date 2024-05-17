@@ -19,6 +19,7 @@ function App() {
       <Route path='/home' element={<Home />} />
       <Route path='/home/footer' element={<PasswardSetting />} />
       <Route path='/home/generateInvoice' element={<GenerateInvoice />} />
+      <Route path='/home/generateInvoice/footer' element={<PasswardSetting />} />
       
     
     </Routes>
