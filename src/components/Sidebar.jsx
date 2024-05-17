@@ -13,9 +13,10 @@ import {
  
 } from 'react-icons/bs';
 import { IoIosDocument } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 const Menus = [
-  { title: 'Dashboard', src: 'Chart_fill', icon: <MdOutlineDashboard /> },
+  { title: 'Dashboard', src: 'home', icon: <MdOutlineDashboard /> },
  
   {
     title: 'Invoices',
@@ -24,18 +25,24 @@ const Menus = [
     , subMenus: [
       {
         title: 'All Invoices List',
-       
+       src:'allinvoices',
 
         cName: 'sub-nav',
       },
       {
         title: 'Pending Invoices List',
-     
+       src:'pendinginvoices',
 
         cName: 'sub-nav',
       },
       {
         title: 'Completed Invoices List',
+        src:'completedinvoices'
+      
+      },
+      {
+        title: 'Generate Invoice',
+        src:'completedinvoices'
       
       },
       
@@ -401,9 +408,9 @@ const App = () => {
                   {Menu.subMenus.map((subMenuItem, idx) => (
                     <li
                       key={idx}
-                      className="flex px-5 cursor-pointer  text-md text-gray-500 py-1 px-11 "
+                      className="flex cursor-pointer  text-md text-gray-500 py-2 px-12 "
                     >
-                      {subMenuItem.title}
+                       <Link to={subMenuItem.src}>{subMenuItem.title}</Link>
                     </li>
                   ))}
                 </ul>
