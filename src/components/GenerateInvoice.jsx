@@ -9,11 +9,11 @@ import InputAdornment from '@mui/material/InputAdornment';
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
+
 const GenerateInvoice = () => {
   const location = useLocation();
   const currentPath = location.pathname;
-  const pathSpilit = currentPath.split("/").slice(1);
-  console.log(pathSpilit);
+  const pathSegments = currentPath.split('/').filter(segment => segment);
   const top100Films = [
     { label: "The Shawshank Redemption", year: 1994 },
     { label: "The Godfather", year: 1972 },
@@ -31,7 +31,22 @@ const GenerateInvoice = () => {
           Generate Invoice
         </div>
         <div>
-          <Link to="/home">{currentPath}</Link>
+          {/* <Link to="/home">{currentPath}</Link> */}
+          <nav aria-label="breadcrumb">
+      <ol className="breadcrumb flex">
+        {pathSegments.map((segment, index) => {
+          const path = `/${pathSegments.slice(0, index + 1).join('/')}`;
+          const isLastSegment = index === pathSegments.length - 1;
+          const className = isLastSegment ? 'breadcrumb-item active' : 'breadcrumb-item';
+
+          return (
+            <li key={path} className="breadcrumb-item">
+              <Link to={path} style={isLastSegment ? { color: '#fca389' } : {}}>{segment}/</Link>
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
         </div>
       </div>
       <div className="flex flex-col bg-white p-12 m-5 w-full rounded-sm ">
@@ -74,7 +89,7 @@ const GenerateInvoice = () => {
                 <OutlinedInput
                   id="outlined-adornment-amount"
                   startAdornment={
-                    <InputAdornment position="start">$</InputAdornment>
+                    <InputAdornment position="start" >$</InputAdornment>
                   }
                   label="Amount"
                 />

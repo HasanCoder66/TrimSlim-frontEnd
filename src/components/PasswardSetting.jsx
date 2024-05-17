@@ -7,8 +7,7 @@ import { useLocation,Link } from "react-router-dom";
 const PasswardSetting = () => {
   const location = useLocation();
   const currentPath = location.pathname;
-  const pathSpilit = currentPath.split('/').slice(1)
-  console.log(pathSpilit)
+  const pathSegments = currentPath.split('/').filter(segment => segment);
   return (
     <div className="h-screen bg-[#edf1f5]">
       <div className="flex items-center justify-between font-bold text-3xl text-[#CECECE] p-5 bg-white">
@@ -17,9 +16,21 @@ const PasswardSetting = () => {
           Change Password
         </div>
         <div>
-          <Link to= "/home">
-            {currentPath}
-          </Link>
+        <nav aria-label="breadcrumb">
+      <ol className="breadcrumb flex">
+        {pathSegments.map((segment, index) => {
+          const path = `/${pathSegments.slice(0, index + 1).join('/')}`;
+          const isLastSegment = index === pathSegments.length - 1;
+          const className = isLastSegment ? 'breadcrumb-item active' : 'breadcrumb-item';
+
+          return (
+            <li key={path} className="breadcrumb-item">
+              <Link to={path} style={isLastSegment ? { color: '#fca389' } : {}}>{segment}/</Link>
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
           
          
         </div>
