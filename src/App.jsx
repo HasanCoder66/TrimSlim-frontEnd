@@ -21,6 +21,8 @@ import {
 import Sidebar from ".././src/components/Sidebar";
 import AllPhysicians from "./pages/AllPhysicians";
 import PendingPhysicians from "./pages/PendingPhysicians";
+import ApprovedPhysicians from "./pages/ApprovedPhysicians";
+import RejectedPhysicians from "./pages/RejectedPhysicians";
 
 
 const AuthenticatedRoutes = () => {
@@ -90,6 +92,14 @@ const router = createBrowserRouter([
       {
         path: "/pendingPhysicians",
         element: <PendingPhysicians />,
+      },
+      {
+        path: "/approvedPhysicians",
+        element: <ApprovedPhysicians/>,
+      },
+      {
+        path: "/rejectedPhysicians",
+        element: <RejectedPhysicians/>,
       },
     ],
   },
