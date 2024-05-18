@@ -56,27 +56,27 @@ const Menus = [
     subMenus: [
       {
         title: 'All Appointments List',
-        src: '/services/services1',
+        src: 'allappointments',
 
         cName: 'sub-nav',
       },
       {
         title: 'Pending Appointments List',
-        src: '/services/services2',
+        src: 'pendingappointments',
 
         cName: 'sub-nav',
       },
       {
         title: 'Approved Appointments',
-        src: '/services/services3',
+        src: 'approvedappointments',
       },
       {
         title: 'Completed Appointments',
-        src: '/services/services3',
+        src: 'completedappointments',
       },
       {
         title: 'Rejected Appointments',
-        src: '/services/services3',
+        src: 'rejectedappointments',
       },
       
     ],
@@ -91,23 +91,23 @@ const Menus = [
     subMenus: [
       {
         title: 'All Patients List',
-        src: '/services/services1',
+        src: 'allpatients',
 
         cName: 'sub-nav',
       },
       {
         title: 'Pending Patients',
-        src: '/services/services2',
+        src: 'pendingpatients',
 
         cName: 'sub-nav',
       },
       {
         title: 'Approved Patients',
-        src: '/services/services3',
+        src: 'approvedpatients',
       },
       {
         title: 'Rejected Patients',
-        src: '/services/services3',
+        src: 'rejectedpatients',
       },
       
     ],
@@ -395,7 +395,7 @@ const App = () => {
               ${Menu.gap ? 'mt-9' : 'mt-2'}  `}
               >
                 {Menu.icon ? Menu.icon : <MdOutlineDashboard />}
-                <span className="flex-1">{Menu.title}</span>
+                <span className="flex-1">  <Link to={Menu.src}>{Menu.title}</Link> </span>
                 {Menu.subMenus && (
                   <BsChevronDown
                     onClick={() => setSubMenuOpen(index)}
@@ -408,7 +408,7 @@ const App = () => {
                   {Menu.subMenus.map((subMenuItem, idx) => (
                     <li
                       key={idx}
-                      className="flex cursor-pointer  text-md text-gray-500 py-2 px-12 "
+                      className="flex cursor-pointer  text-md text-gray-500 py-2 px-11 "
                     >
                        <Link to={subMenuItem.src}>{subMenuItem.title}</Link>
                     </li>

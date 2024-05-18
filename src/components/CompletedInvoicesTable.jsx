@@ -49,8 +49,19 @@ const columns = [
     headerName: 'Status',
     width: 170,
     editable: false,
-    cellClassName: (params) =>
-      params.value === 'paid' ? 'status-paid' : 'status-pending',
+    renderCell: (params) => (
+      <div style={{
+        whiteSpace: 'normal',
+        wordBreak: 'break-word',
+        lineHeight: '1.2',
+        textAlign: 'center',
+        padding: '4px 8px',
+        borderRadius: '4px',
+        backgroundColor: params.value === 'paid' ? 'rgba(144, 238, 144, 0.3)' : 'rgba(255, 255, 0, 0.3)'
+      }}>
+        {params.value}
+      </div>
+    ),
   },
   {
     field: 'actions',
@@ -101,47 +112,50 @@ export default function AllInvoicesTable() {
           }}
           pageSizeOptions={[10]}
           sx={{
-            '& .status-paid': {
-              backgroundColor: 'rgba(144, 238, 144, 0.3)',
-              textAlign: 'center',
-              borderRadius: '4px',
-            },
-            '& .status-pending': {
-              backgroundColor: 'rgba(255, 182, 193, 0.3)',
-              textAlign: 'center',
-              borderRadius: '4px',
-            },
             '& .MuiDataGrid-columnHeaders': {
-              backgroundColor: 'rgba(214, 214, 214, 1)',
+            //   backgroundColor: 'rgba(214, 214, 214, 1)',
               fontSize: '18px',
-              textAlign: 'center',
+              whiteSpace: 'normal',
+              wordBreak: 'break-word',
             },
-            '& .css-14s9430-MuiDataGrid-root': {
-                backgroundColor: 'gray',
-                borderBottom: '1px solid #e0e0e0',
-              
-              },
-              '& .MuiDataGrid-column': {
-                borderRight: '1px solid #e0e0e0',
-              },
-              '& .MuiDataGrid-cell': {
-                borderRight: '1px solid #e0e0e0',
-              },
-              '& .MuiDataGrid-columnSeparator': {
-                display: 'none',
-              },
-              '& .MuiDataGrid-columnHeader': {
-                borderRight: '1px solid #e0e0e0',
-                backgroundColor:'rgba(211, 211, 211, 1)',
-               fontSize:'18px',
-               textAlign:'center'
-              },
-              '& .MuiDataGrid-columnHeader:last-child': {
-                borderRight: 'none',
-              },
-              '& .MuiDataGrid-cell:last-child': {
-                borderRight: 'none',
-              },
+            '& .MuiDataGrid-columnHeaderTitleContainer': {
+              justifyContent: 'center',
+              display: 'flex',
+              alignItems: 'center',
+            },
+            '& .MuiDataGrid-columnHeader': {
+              borderRight: '1px solid #e0e0e0',
+              backgroundColor: 'rgba(211, 211, 211, 1)',
+              fontSize: '16px',
+              whiteSpace: 'normal',
+              wordBreak: 'break-word',
+            },
+            '& .MuiDataGrid-column': {
+              borderRight: '1px solid #e0e0e0',
+            },
+            '& .MuiDataGrid-cell': {
+              borderRight: '1px solid #e0e0e0',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              whiteSpace: 'normal',
+              wordBreak: 'break-word',
+            },
+            '& .MuiDataGrid-columnSeparator': {
+              display: 'none',
+            },
+            '& .MuiDataGrid-columnHeaderTitle': {
+              borderRight: '1px solid #e0e0e0',
+              backgroundColor: 'rgba(211, 211, 211, 1)',
+              fontSize: '12px',
+              fontWeight: 'bold',
+            },
+            '& .MuiDataGrid-columnHeader:last-child': {
+              borderRight: 'none',
+            },
+            '& .MuiDataGrid-cell:last-child': {
+              borderRight: 'none',
+            },
           }}
         />
       </Box>

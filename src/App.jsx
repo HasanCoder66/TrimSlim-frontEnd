@@ -8,9 +8,7 @@ import Navbar from "./components/Navbar";
 import AllInvoices from "./pages/AllInvoices";
 import CompletedInvoices from "./pages/CompletedInvoices";
 
-import Home from "./pages/Home";
-import PendingInvoices from "./pages/PendingInvoices";
-import Login from "./pages/login";
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -29,20 +27,39 @@ import SlidingBanners from "./pages/SlidingBanners";
 import ReorderSlidingBanner from "./pages/ReorderSlidingBanner";
 
 
+import Home from "./pages/Home"
+import PendingInvoices from "./pages/PendingInvoices"
+import Login from "./pages/login"
+import { createBrowserRouter, RouterProvider, Outlet , Route, Routes } from "react-router-dom";
+import Sidebar from '.././src/components/Sidebar'
+import AllPatients from "./pages/AllPatients"
+import PendingPatients from "./pages/PendingPatients"
+import ApprovedPatients from "./pages/ApprovedPatients"
+import RejectedPatients from "./pages/RejectedPatients"
+import AllAppointments from "./pages/AllAppointments"
+import PendingAppointments from "./pages/PendingAppointments"
+import CompAppList from "./pages/CompAppList"
+import ApprovedAppointments from "./pages/ApprovedAppointments"
+import RejectedAppointments from "./pages/RejectedAppointments"
+
 const AuthenticatedRoutes = () => {
   return (
-    <>
-      <div className="overflow-hidden">
-        <Navbar />
-        <div className="flex">
-          <Sidebar />
-          <main className="flex-1 bg-gray-100 ">
-            <Outlet />
-            <Footer />
-          </main>
-        </div>
+<>
+<div className="overflow-hidden">
+      <Navbar/>
+      <div className="flex">
+        <Sidebar />
+        <main className="flex-1 bg-gray-100 ">
+          <Outlet/>
+         
+        </main>
+        
       </div>
-    </>
+      <Footer />
+    </div>
+    
+</>
+
   );
 };
 
@@ -110,6 +127,7 @@ const router = createBrowserRouter([
         element: <AllProducts/>,
       },
       {
+
         path: "/reorderproducts",
         element: <ReorderProducts/>,
       },
@@ -122,6 +140,44 @@ const router = createBrowserRouter([
         element: <ReorderSlidingBanner/>,
       },
     ],
+
+        path: "/allpatients",
+        element: <AllPatients />
+      },
+      {
+        path: "/pendingpatients",
+        element: <PendingPatients />
+      },
+      {
+        path: "/approvedpatients",
+        element: <ApprovedPatients />
+      },
+      {
+        path: "/rejectedpatients",
+        element: <RejectedPatients />
+      },
+      {
+        path: "/allappointments",
+        element: <AllAppointments />
+      },
+      {
+        path: "/pendingappointments",
+        element: <PendingAppointments />
+      },
+      {
+        path: "/completedappointments",
+        element: <CompAppList />
+      },
+      {
+        path: "/approvedappointments",
+        element: <ApprovedAppointments />
+      },
+      {
+        path: "/rejectedappointments",
+        element: <RejectedAppointments />
+      },
+    ]
+
   },
   {
     path: "/login",
