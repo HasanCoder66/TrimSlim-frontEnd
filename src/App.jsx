@@ -23,6 +23,7 @@ import AllPhysicians from "./pages/AllPhysicians";
 import PendingPhysicians from "./pages/PendingPhysicians";
 import ApprovedPhysicians from "./pages/ApprovedPhysicians";
 import RejectedPhysicians from "./pages/RejectedPhysicians";
+import AllProducts from "./pages/AllProducts";
 
 
 const AuthenticatedRoutes = () => {
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
       {
         path: "/rejectedPhysicians",
         element: <RejectedPhysicians/>,
+      },
+      {
+        path: "/allproducts",
+        element: <AllProducts/>,
       },
     ],
   },
