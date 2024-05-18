@@ -14,6 +14,15 @@ import PendingInvoices from "./pages/PendingInvoices"
 import Login from "./pages/login"
 import { createBrowserRouter, RouterProvider, Outlet , Route, Routes } from "react-router-dom";
 import Sidebar from '.././src/components/Sidebar'
+import AllPatients from "./pages/AllPatients"
+import PendingPatients from "./pages/PendingPatients"
+import ApprovedPatients from "./pages/ApprovedPatients"
+import RejectedPatients from "./pages/RejectedPatients"
+import AllAppointments from "./pages/AllAppointments"
+import PendingAppointments from "./pages/PendingAppointments"
+import CompAppList from "./pages/CompAppList"
+import ApprovedAppointments from "./pages/ApprovedAppointments"
+import RejectedAppointments from "./pages/RejectedAppointments"
 
 const AuthenticatedRoutes = () => {
   return (
@@ -24,11 +33,11 @@ const AuthenticatedRoutes = () => {
         <Sidebar />
         <main className="flex-1 bg-gray-100 ">
           <Outlet/>
-          <Footer />
+         
         </main>
         
       </div>
-     
+      <Footer />
     </div>
     
 </>
@@ -79,6 +88,42 @@ const router = createBrowserRouter([
       {
         path: "/generateinvoice",
         element: <GenerateInvoice />
+      },
+      {
+        path: "/allpatients",
+        element: <AllPatients />
+      },
+      {
+        path: "/pendingpatients",
+        element: <PendingPatients />
+      },
+      {
+        path: "/approvedpatients",
+        element: <ApprovedPatients />
+      },
+      {
+        path: "/rejectedpatients",
+        element: <RejectedPatients />
+      },
+      {
+        path: "/allappointments",
+        element: <AllAppointments />
+      },
+      {
+        path: "/pendingappointments",
+        element: <PendingAppointments />
+      },
+      {
+        path: "/completedappointments",
+        element: <CompAppList />
+      },
+      {
+        path: "/approvedappointments",
+        element: <ApprovedAppointments />
+      },
+      {
+        path: "/rejectedappointments",
+        element: <RejectedAppointments />
       },
     ]
   },

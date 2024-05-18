@@ -1,74 +1,93 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
+import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { RiSearchLine } from "react-icons/ri";
-
 const initialRows = [
-  { id: 1, amount: '250$', invoice: '2024-000030', Email: 'Snow@gmail.com', fullname: 'Jon', status: 'pending payment' },
-  { id: 2, amount: '250$', invoice: '2024-000030', Email: 'Lannister@gmail.com', fullname: 'Cersei', status: 'pending payment' },
-  { id: 3, amount: '250$', invoice: '2024-000030', Email: 'Lannister@gmail.com', fullname: 'Jaime', status: 'pending payment' },
-  { id: 4, amount: '250$', invoice: '2024-000030', Email: 'Stark@gmail.com', fullname: 'Arya', status: 'pending payment' },
-  { id: 5, amount: '250$', invoice: '2024-000030', Email: 'Targaryen@gmail.com', fullname: 'Daenerys', status: 'pending payment' },
-  { id: 6, amount: '250$', invoice: '2024-000030', Email: 'Melisandre@gmail.com', fullname: null, status: 'pending payment' },
-  { id: 7, amount: '250$', invoice: '2024-000030', Email: 'Clifford@gmail.com', fullname: 'Ferrara', status: 'pending payment' },
-  { id: 8, amount: '250$', invoice: '2024-000030', Email: 'Frances@gmail.com', fullname: 'Rossini', status: 'pending payment' },
-  { id: 9, amount: '250$', invoice: '2024-000030', Email: 'Roxie@gmail.com', fullname: 'Harvey', status: 'pending payment' },
-  { id: 10, amount: '250$', invoice: '2024-000030', Email: 'Snow@gmail.com', fullname: 'Jon', status: 'pending payment' },
+  { id: 1, gender: 'Male', Email: 'Snow@gmail.com', fullname: 'Jon', status: 'approved' },
+  { id: 2, gender: 'Male', Email: 'Lannister@gmail.com', fullname: 'Cersei', status: 'approved' },
+  { id: 3, gender: 'Male', Email: 'Lannister@gmail.com', fullname: 'Jaime', status: 'approved' },
+  { id: 4, gender: 'Male', Email: 'Stark@gmail.com', fullname: 'Arya', status: 'approved' },
+  { id: 5, gender: 'Male', Email: 'Targaryen@gmail.com', fullname: 'Daenerys', status: 'approved' },
+  { id: 6, gender: 'Female', Email: 'Melisandre@gmail.com', fullname: null, status: 'approved' },
+  { id: 7, gender: 'Female', Email: 'Clifford@gmail.com', fullname: 'Ferrara', status: 'approved' },
+  { id: 8, gender: 'Female', Email: 'Frances@gmail.com', fullname: 'Rossini', status: 'approved' },
+  { id: 9, gender: 'Female', Email: 'Roxie@gmail.com', fullname: 'Harvey', status: 'approved' },
+  { id: 10, gender: 'Male', Email: 'Snow@gmail.com', fullname: 'Jon', status: 'approved' },
+
 ];
 
 const columns = [
   {
-    field: 'invoice',
-    headerName: 'Invoice',
-    width: 150,
+    field: 'fullname',
+    headerName: 'Full Name',
+    width: 250,
     editable: false,
   },
   {
-    field: 'amount',
-    headerName: 'Amount',
+    field: 'gender',
+    headerName: 'Gender',
     width: 120,
     editable: false,
   },
   {
-    field: 'fullname',
-    headerName: 'Send To',
-    width: 200,
-    editable: false,
-  },
-  {
     field: 'Email',
-    headerName: 'Checked By',
-    width: 220,
+    headerName: 'Email Address',
+    width: 257,
     editable: false,
   },
   {
     field: 'status',
     headerName: 'Status',
-    width: 170,
+    width: 180,
     editable: false,
     renderCell: (params) => (
-      <div style={{
-        whiteSpace: 'normal',
-        wordBreak: 'break-word',
-        lineHeight: '1.2',
-        textAlign: 'center',
-        padding: '4px 8px',
-        borderRadius: '4px',
-        backgroundColor: params.value === 'paid' ? 'rgba(144, 238, 144, 0.3)' : 'rgba(255, 255, 0, 0.3)'
-      }}>
-        {params.value}
-      </div>
+      <Select
+        value={params.value || 'Approved'}
+        onChange={(event) => {
+          const newValue = event.target.value;
+          params.api.updateRows([{ id: params.id, status: newValue }]);
+        }}
+        displayEmpty
+        fullWidth
+        IconComponent={null}
+        sx={{
+          '& .MuiSelect-select': {
+            padding: '5px 32px',
+            textAlign: 'center',
+            borderBottom: 'none', // Removing bottom border from the dropdown menu
+            outline: 'none',
+          },
+          backgroundColor:
+            params.value === 'approved'
+              ? 'darkgreen'
+              : params.value === 'rejected'
+              ? 'darkred'
+              : 'darkgoldenrod',
+          color: '#fff',
+          borderRadius: '10px',
+        }}
+      >
+       
+        <MenuItem value="approved">Approved</MenuItem>
+        <MenuItem value="rejected">Rejected</MenuItem>
+      </Select>
     ),
   },
   {
     field: 'actions',
     headerName: '',
-    width: 110,
+    width: 160,
     editable: false,
     renderCell: (params) => (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <IconButton aria-label="edit" size="small">
+          <EditIcon />
+        </IconButton>
         <IconButton aria-label="delete" size="small">
           <DeleteIcon />
         </IconButton>
@@ -77,7 +96,7 @@ const columns = [
   },
 ];
 
-export default function PenInvTab() {
+export default function ApprovedPatientsTab() {
   const [rows, setRows] = React.useState(initialRows);
 
   const handleProcessRowUpdate = (newRow) => {
@@ -86,14 +105,17 @@ export default function PenInvTab() {
     return newRow;
   };
 
+      
+      
+
   return (
     <div className='bg-white ml-5 mr-5 mb-5 py-3'>
-      <h1 className='text-md font-semibold mx-8'>PENDING INVOICES</h1>
-      <div className='flex justify-end px-8 py-4'>
-        <input type="text" className='border focus:outline-none focus:ring-0 focus:border-gray-600' />
-        <button className='bg-sky-800 text-white px-2 py-2 '><RiSearchLine /></button>
-      </div>
-      <Box sx={{ height: 400, width: '95%', backgroundColor: 'white', marginLeft: '25px' }}>
+      <h1 className='text-md font-semibold mx-8'>Approved Patients</h1>
+  <div className='flex justify-end px-8 py-4'>
+   <input type="text" className='border  focus:outline-none focus:ring-0 focus:border-gray-600'/>
+   <button className='bg-sky-800 text-white px-2 py-2 '><RiSearchLine/></button>
+  </div>
+      <Box sx={{ height: 400, width: '95%', backgroundColor: 'white' , marginLeft:'25px' }}>
         <DataGrid
           rows={rows}
           columns={columns}
@@ -154,6 +176,7 @@ export default function PenInvTab() {
           }}
         />
       </Box>
+
     </div>
   );
 }
