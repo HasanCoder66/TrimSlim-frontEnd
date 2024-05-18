@@ -8,15 +8,16 @@ import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { RiSearchLine } from "react-icons/ri";
+import { FaPlus } from "react-icons/fa6";
 const initialRows = [
-    { id: 1, fullname: 'Jon', status: 'pending' },
-    { id: 2,  fullname: 'Cersei', status: 'pending' },
-    { id: 3,  fullname: 'Jaime', status: 'pending' },
-    { id: 4,  fullname: 'Arya', status: 'approved' },
-    { id: 5,  fullname: 'Daenerys', status: 'approved' },
-    { id: 6,  fullname: null, status: 'rejected' },
-    { id: 7, fullname: 'Ferrara', status: 'approved' },
-    { id: 8, fullname: 'Rossini', status: 'rejected' }
+    { id: 1, name: 'Jon', status: 'pending', image : 'https://www.shutterstock.com/image-photo/composition-medicine-bottles-pills-isolated-260nw-129916589.jpg' },
+    { id: 2,  name: 'Cersei', status: 'pending' , image : 'https://t4.ftcdn.net/jpg/03/08/07/35/360_F_308073521_pLspRn1g6CMNt4s8tFeNsTkfHpSjTE28.jpg' },
+    { id: 3,  name: 'Jaime', status: 'pending', image:'https://img.freepik.com/premium-photo/medicine-glass-bottle-closed-bottle-isolated-white-background-with-clipping-path_250899-528.jpg?w=360' },
+    { id: 4,  name: 'Arya', status: 'approved' , image : 'https://www.shutterstock.com/image-photo/composition-medicine-bottles-pills-isolated-260nw-129916589.jpg'},
+    { id: 5,  name: 'Daenerys', status: 'approved', image : 'https://www.shutterstock.com/image-photo/composition-medicine-bottles-pills-isolated-260nw-129916589.jpg' },
+    { id: 6,  name: null, status: 'rejected', image:'https://img.freepik.com/premium-photo/medicine-glass-bottle-closed-bottle-isolated-white-background-with-clipping-path_250899-528.jpg?w=360' },
+    { id: 7, name: 'Ferrara', status: 'approved' , image : 'https://www.shutterstock.com/image-photo/composition-medicine-bottles-pills-isolated-260nw-129916589.jpg'},
+    { id: 8, name: 'Rossini', status: 'rejected', image:'https://img.freepik.com/premium-photo/medicine-glass-bottle-closed-bottle-isolated-white-background-with-clipping-path_250899-528.jpg?w=360' }
   ];
   
   const columns = [
@@ -24,10 +25,14 @@ const initialRows = [
       field: 'image',
       headerName: 'Image',
       width: 150,
+      height: 550,
       editable: false,
+      renderCell: (params) => (
+        params.value ? <img src={params.value} alt={params.row.name} style={{ width: '100%', height: '200px' }} /> : null
+      ),
     },
     {
-      field: 'namename',
+      field: 'name',
       headerName: 'Name',
       width: 450,
       editable: false,
@@ -100,7 +105,7 @@ const AllPropductsTable = () => {
   return (
     <div className='bg-white ml-5 mr-5 mb-5 py-3'>
       <div className='flex justify-end px-8 py-2'>
-        <button className='bg-black text-white p-2'><span className=''>+</span>Add Product</button>
+        <button className='bg-black text-white p-2 rounded-sm flex'><FaPlus className='m-1  '/>Add Product</button>
 
       </div>
     
@@ -126,7 +131,6 @@ const AllPropductsTable = () => {
           '& .css-14s9430-MuiDataGrid-root': {
             backgroundColor: 'gray',
             borderBottom: '1px solid #e0e0e0',
-          
           },
           '& .MuiDataGrid-column': {
             borderRight: '1px solid #e0e0e0',

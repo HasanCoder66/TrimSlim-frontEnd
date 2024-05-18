@@ -4,6 +4,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { RiSearchLine } from "react-icons/ri";
+import { FaPlus } from 'react-icons/fa';
 
 const initialRows = [
   { id: 1, amount: '250$', invoice: '2024-000030', Email: 'Snow@gmail.com', fullname: 'Jon', status: 'paid' },
@@ -78,6 +79,10 @@ export default function AllInvoicesTable() {
   return (
     <div className='bg-white ml-5 mr-5 mb-5 py-3'>
       <h1 className='text-md font-semibold mx-8'>COMPLETED INVOICES</h1>
+      <div className='flex justify-end px-8 py-2'>
+        <button className='bg-black text-white p-2 rounded-sm flex'><FaPlus className='m-1  '/>Generate Invoice</button>
+
+      </div>
       <div className='flex justify-end px-8 py-4'>
         <input type="text" className='border focus:outline-none focus:ring-0 focus:border-gray-600' />
         <button className='bg-sky-800 text-white px-2 py-2 '><RiSearchLine /></button>
