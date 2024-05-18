@@ -24,6 +24,9 @@ import PendingPhysicians from "./pages/PendingPhysicians";
 import ApprovedPhysicians from "./pages/ApprovedPhysicians";
 import RejectedPhysicians from "./pages/RejectedPhysicians";
 import AllProducts from "./pages/AllProducts";
+import ReorderProducts from "./pages/ReorderProducts";
+import SlidingBanners from "./pages/SlidingBanners";
+import ReorderSlidingBanner from "./pages/ReorderSlidingBanner";
 
 
 const AuthenticatedRoutes = () => {
@@ -105,6 +108,18 @@ const router = createBrowserRouter([
       {
         path: "/allproducts",
         element: <AllProducts/>,
+      },
+      {
+        path: "/reorderproducts",
+        element: <ReorderProducts/>,
+      },
+      {
+        path: "/slidingbanners",
+        element: <SlidingBanners/>,
+      },
+      {
+        path: "/reorderslidingbanner",
+        element: <ReorderSlidingBanner/>,
       },
     ],
   },

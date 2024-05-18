@@ -23,8 +23,8 @@ const initialRows = [
 const columns = [
   {
     field: 'image',
-    headerName: 'Image',
-    width: 180,
+    headerName: 'Title',
+    width: 200,
     editable: false,
     renderCell: (params) => (
       params.value ? <img src={params.value} alt={params.row.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> : null
@@ -33,69 +33,16 @@ const columns = [
   },
   {
     field: 'name',
-    headerName: 'Name',
-    width: 450,
+    headerName: '',
+    width: 768,
     editable: false,
     cellClassName: 'name-cell',
   },
-  {
-    field: 'status',
-    headerName: 'Status',
-    width: 180,
-    editable: false,
-    renderCell: (params) => (
-      <Select
-        value={params.value || 'active'}
-        onChange={(event) => {
-          const newValue = event.target.value;
-          params.api.updateRows([{ id: params.id, status: newValue }]);
-        }}
-        displayEmpty
-        fullWidth
-        IconComponent={null}
-        sx={{
-          '& .MuiSelect-select': {
-            padding: '5px 32px',
-            textAlign: 'center',
-            borderBottom: 'none', // Removing bottom border from the dropdown menu
-            outline: 'none',
-          },
-          backgroundColor:
-            params.value === 'active'
-              ? 'darkgreen'
-              : params.value === 'block'
-                ? 'darkred'
-                : 'darkgoldenrod',
-          color: '#fff',
-          borderRadius: '10px',
-        }}
-      >
-        <MenuItem value="active">Active</MenuItem>
-        <MenuItem value="block">Block</MenuItem>
-      </Select>
-    ),
-    cellClassName: 'status-cell',
-  },
-  {
-    field: 'actions',
-    headerName: '',
-    width: 160,
-    editable: false,
-    renderCell: (params) => (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <IconButton aria-label="edit" size="small">
-          <EditIcon />
-        </IconButton>
-        <IconButton aria-label="delete" size="small">
-          <DeleteIcon />
-        </IconButton>
-      </div>
-    ),
-    cellClassName: 'actions-cell',
-  },
+ 
+  
 ];
 
-const AllProductsTable = () => {
+const ReorderPropductsTable = () => {
   const [rows, setRows] = React.useState(initialRows);
 
   const handleProcessRowUpdate = (newRow) => {
@@ -106,13 +53,14 @@ const AllProductsTable = () => {
 
   return (
     <div className='bg-white ml-5 mr-5 mb-5 py-3'>
-      <div className='flex justify-end px-8 py-2'>
-        <button className='bg-black text-white p-2 rounded-sm flex'><FaPlus className='m-1' />Add Product</button>
+      <div className='flex justify-between px-8 py-2'>
+        <span className='text-sm text-slate-500'>
+          Total Products : {initialRows.length}{<br/>}
+          By dargging and dropping rows within a table, you can reorder the services and hit the update button for save the order.
+        </span>
+        <button className='bg-black text-white p-2 rounded-sm flex'>Update</button>
       </div>
-      <div className='flex justify-end px-8 py-4'>
-        <input type="text" className='border focus:outline-none focus:ring-0 focus:border-gray-600' />
-        <button className='bg-sky-800 text-white px-2 py-2'><RiSearchLine /></button>
-      </div>
+     
       <Box sx={{ height: 'auto', width: '95%', backgroundColor: 'white', marginLeft: '25px' }}>
         <DataGrid
           rows={rows}
@@ -175,9 +123,11 @@ const AllProductsTable = () => {
           }}
         />
       </Box>
+      <button className='bg-black text-white p-2 m-6 rounded-sm flex'>Update</button>
+
     </div>
   );
 }
 
-export default AllProductsTable;
+export default ReorderPropductsTable;
 

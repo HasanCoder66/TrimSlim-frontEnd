@@ -24,7 +24,7 @@ const columns = [
   {
     field: 'image',
     headerName: 'Image',
-    width: 180,
+    width: 550,
     editable: false,
     renderCell: (params) => (
       params.value ? <img src={params.value} alt={params.row.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> : null
@@ -32,16 +32,9 @@ const columns = [
     cellClassName: 'image-cell',
   },
   {
-    field: 'name',
-    headerName: 'Name',
-    width: 450,
-    editable: false,
-    cellClassName: 'name-cell',
-  },
-  {
     field: 'status',
     headerName: 'Status',
-    width: 180,
+    width: 238,
     editable: false,
     renderCell: (params) => (
       <Select
@@ -79,7 +72,7 @@ const columns = [
   {
     field: 'actions',
     headerName: '',
-    width: 160,
+    width: 180,
     editable: false,
     renderCell: (params) => (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -95,7 +88,7 @@ const columns = [
   },
 ];
 
-const AllProductsTable = () => {
+const SlidingBannersTable = () => {
   const [rows, setRows] = React.useState(initialRows);
 
   const handleProcessRowUpdate = (newRow) => {
@@ -107,7 +100,7 @@ const AllProductsTable = () => {
   return (
     <div className='bg-white ml-5 mr-5 mb-5 py-3'>
       <div className='flex justify-end px-8 py-2'>
-        <button className='bg-black text-white p-2 rounded-sm flex'><FaPlus className='m-1' />Add Product</button>
+        <button className='bg-black text-white p-2 rounded-sm flex'><FaPlus className='m-1' />Add Sliding Banner</button>
       </div>
       <div className='flex justify-end px-8 py-4'>
         <input type="text" className='border focus:outline-none focus:ring-0 focus:border-gray-600' />
@@ -179,5 +172,5 @@ const AllProductsTable = () => {
   );
 }
 
-export default AllProductsTable;
+export default SlidingBannersTable;
 
