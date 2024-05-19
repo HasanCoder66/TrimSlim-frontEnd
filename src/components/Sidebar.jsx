@@ -122,23 +122,23 @@ const Menus = [
     subMenus: [
       {
         title: 'All Physicians List',
-        src: '/services/services1',
+        src: 'allPhysicians',
 
-        cName: 'sub-nav',
+        cName: 'pending',
       },
       {
         title: 'Pending Physicians',
-        src: '/services/services2',
+        src: 'pendingPhysicians',
 
         cName: 'sub-nav',
       },
       {
         title: 'Approved Physicians',
-        src: '/services/services3',
+        src: 'approvedPhysicians',
       },
       {
         title: 'Rejected Physicians',
-        src: '/services/services3',
+        src: 'rejectedPhysicians',
       },
       
     ],
@@ -153,7 +153,7 @@ const Menus = [
     subMenus: [
       {
         title: 'Products List',
-        src: '/services/services1',
+        src: 'allproducts',
 
         cName: 'sub-nav',
       },
@@ -165,7 +165,7 @@ const Menus = [
       },
       {
         title: 'Recoder Products',
-        src: '/services/services3',
+        src: 'reorderproducts',
       },
       
     ],
@@ -180,7 +180,7 @@ const Menus = [
     subMenus: [
       {
         title: 'Sliding Banners List',
-        src: '/services/services1',
+        src: 'slidingbanners',
 
         cName: 'sub-nav',
       },
@@ -192,7 +192,7 @@ const Menus = [
       },
       {
         title: 'Recoder Sliding Banners',
-        src: '/services/services3',
+        src: 'reorderslidingbanners',
       },
       
     ],
