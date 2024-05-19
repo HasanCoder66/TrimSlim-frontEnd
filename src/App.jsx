@@ -30,8 +30,7 @@ import ReorderSlidingBanner from "./pages/ReorderSlidingBanner";
 import Home from "./pages/Home"
 import PendingInvoices from "./pages/PendingInvoices"
 import Login from "./pages/login"
-import { createBrowserRouter, RouterProvider, Outlet , Route, Routes } from "react-router-dom";
-import Sidebar from '.././src/components/Sidebar'
+
 import AllPatients from "./pages/AllPatients"
 import PendingPatients from "./pages/PendingPatients"
 import ApprovedPatients from "./pages/ApprovedPatients"
@@ -136,11 +135,10 @@ const router = createBrowserRouter([
         element: <SlidingBanners/>,
       },
       {
-        path: "/reorderslidingbanner",
+        path: "/reorderslidingbanners",
         element: <ReorderSlidingBanner/>,
       },
-    ],
-
+    {  
         path: "/allpatients",
         element: <AllPatients />
       },
