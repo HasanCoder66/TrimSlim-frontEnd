@@ -60,6 +60,11 @@ import EditAboutUsPage from "./pages/EditAboutUsPage";
 import EditServicesPage from "./pages/EditServicesPage";
 import EditAboutUsPageTable from "./components/EditAboutUsPageTable";
 import EditOurTeamPage from "./pages/EditOurTeamPage";
+import EditProductsPage from "./pages/EditProductsPage";
+import EditContactUsPage from "./pages/EditContactUsPage";
+import EditHipaaCompliantpage from "./pages/EditHipaaCompliantpage";
+import EditPrivacyPolicyPage from "./pages/EditPrivacyPolicyPage";
+import EditTermsConditionsPage from "./pages/EditTermsConditionsPage";
 
 
 const AuthenticatedRoutes = () => {
@@ -259,6 +264,31 @@ const router = createBrowserRouter([
       {
         path: "/editourteampage",
         element: <EditOurTeamPage/>
+
+      },
+      {
+        path: "/editcontactuspage",
+        element: <EditContactUsPage/>
+
+      },
+      {
+        path: "/editproductspage",
+        element: <EditProductsPage/>
+
+      },
+      {
+        path: "/edithipaacompliantpage",
+        element: <EditHipaaCompliantpage/>
+
+      },
+      {
+        path: "/editprivacypolicypage",
+        element: <EditPrivacyPolicyPage/>
+
+      },
+      {
+        path: "/edittermsconditionspage",
+        element: <EditTermsConditionsPage/>
 
       },
     ]
