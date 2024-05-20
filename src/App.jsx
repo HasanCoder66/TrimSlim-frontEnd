@@ -46,6 +46,8 @@ import TeamMembersList from "./pages/TeamMembersList";
 import ReorderTeamMembers from "./pages/ReorderTeamMembers";
 import FAQs from "./pages/FAQs";
 import AddFAQs from "./pages/AddFAQs";
+import Testimonial from "./pages/Testimonial";
+import AddTestimonial from "./pages/AddTestimonial";
 
 const AuthenticatedRoutes = () => {
   return (
@@ -203,6 +205,14 @@ const router = createBrowserRouter([
       {
         path: "/addfaqs",
         element: <AddFAQs/>
+      },
+      {
+        path: "/testimonial",
+        element: <Testimonial/>
+      },
+      {
+        path: "/addtestimonial",
+        element: <AddTestimonial/>
       },
     ]
 

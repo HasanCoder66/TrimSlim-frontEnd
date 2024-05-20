@@ -10,7 +10,8 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
 
-const AddFAQsTable = () => {
+const AddTestimonialTable = () => {
+
   const location = useLocation();
   const currentPath = location.pathname;
   const pathSegments = currentPath.split('/').filter(segment => segment);
@@ -36,17 +37,39 @@ const AddFAQsTable = () => {
                 Question
               </label>
             </div>
-            <div className="border border-collapse-700 w-3/4 p-2 m-1">
+            <div className="flex  flex-row justify-between w-3/4">
+            <div className="border border-collapse-700  p-2 m-1">
              <input type="text" placeholder="Question" className="w-full   outline-none"/>
             </div>
+            <div className="flex items-center">
+            <div className=" text-center">
+              <label
+                htmlFor="oldPassword"
+                className="text-sm font-bold text-slate-500 mr-3"
+              >
+                Designation
+              </label>
+            </div>
+            <div className="border border-collapse-700  p-2 m-1">
+             <input type="text" placeholder="Question" className="w-full   outline-none"/>
+            </div>
+
+
+            </div>
+            </div>
           </div>
+
+
+
+
+
           <div className="flex w-full justify-between items-start mb-4 ">
             <div className=" text-center">
               <label
                 htmlFor="oldPassword"
                 className="text-sm font-bold text-slate-500 mr-3"
               >
-                Answer
+                Testimonial
               </label>
             </div>
             <div className="border border-collapse-700 w-3/4 p-2 m-1">
@@ -69,4 +92,5 @@ const AddFAQsTable = () => {
   );
 };
 
-export default AddFAQsTable;
+export default AddTestimonialTable;
+
