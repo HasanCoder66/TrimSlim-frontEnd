@@ -45,7 +45,7 @@ export default function SlidingBanTiny() {
       apiKey='ar9rz3ek138ri8zqmmjy1ver1c4xksfbzi3illv7sk37tojq'
       init={{
         plugins: 'anchor autolink charmap codesample image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate  mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
-        toolbar: 'styles | bold italic underline |numlist bullist| removeformat',
+        toolbar: ' styles | bold italic underline |numlist bullist| removeformat',
         menubar: false,
         tinycomments_mode: 'embedded',
         tinycomments_author: 'Author name',

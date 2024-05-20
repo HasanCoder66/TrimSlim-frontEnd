@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
-export default function ServiceTiny() {
+export default function ProductTiny() {
     const [image, setImage] = useState(null);
 
     const handleImageChange = (e) => {

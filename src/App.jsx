@@ -40,11 +40,26 @@ import PendingAppointments from "./pages/PendingAppointments"
 import CompAppList from "./pages/CompAppList"
 import ApprovedAppointments from "./pages/ApprovedAppointments"
 import RejectedAppointments from "./pages/RejectedAppointments"
+
+import ServicesList from "./pages/ServicesList";
+import ReorderServices from "./pages/ReorderServices";
+import TeamMembersList from "./pages/TeamMembersList";
+import ReorderTeamMembers from "./pages/ReorderTeamMembers";
+import FAQs from "./pages/FAQs";
+import AddFAQs from "./pages/AddFAQs";
+import Testimonial from "./pages/Testimonial";
+import AddTestimonial from "./pages/AddTestimonial";
+
 import Tiny from "./components/SlidingBanTiny";
 import SlidingBanTiny from "./components/SlidingBanTiny";
 import AddSlidingBan from "./pages/AddSlidingBan";
-import ServiceTiny from "./components/ServiceTiny";
-import AddService from "./pages/AddService";
+
+import AddService from "./pages/AddPro";
+import AddPro from "./pages/AddPro";
+import ServiceTiny from "./components/AddSerTiny";
+import AddSer from "./pages/AddSer";
+import AddTeamMember from "./pages/AddTeamMember";
+
 
 const AuthenticatedRoutes = () => {
   return (
@@ -180,12 +195,55 @@ const router = createBrowserRouter([
         element: <RejectedAppointments />
       },
       {
+        path: "/serviceslist",
+        element: <ServicesList/>
+      },
+      {
+        path: "/reorderservices",
+        element: <ReorderServices/>
+      },
+      {
+        path: "/teammemberslist",
+        element: <TeamMembersList/>
+      },
+      {
+        path: "/reorderteammembers",
+        element: <ReorderTeamMembers/>
+      },
+      {
+        path: "/faqs",
+        element: <FAQs/>
+      },
+      {
+        path: "/addfaqs",
+        element: <AddFAQs/>
+      },
+      {
+        path: "/testimonial",
+        element: <Testimonial/>
+      },
+      {
+        path: "/addtestimonial",
+        element: <AddTestimonial/>
+      },
+        {
         path: "/addslidingbanner",
         element: <AddSlidingBan/>
       },
       {
-        path: "/addservice",
-        element: <AddService/>
+        path: "/addpro",
+        element: <AddPro/>
+
+      },
+      {
+        path: "/addser",
+        element: <AddSer/>
+
+      },
+      {
+        path: "/addteam",
+        element: <AddTeamMember/>
+
       },
     ]
 
