@@ -40,6 +40,7 @@ import PendingAppointments from "./pages/PendingAppointments"
 import CompAppList from "./pages/CompAppList"
 import ApprovedAppointments from "./pages/ApprovedAppointments"
 import RejectedAppointments from "./pages/RejectedAppointments"
+import ServicesList from "./pages/ServicesList";
 
 const AuthenticatedRoutes = () => {
   return (
@@ -173,6 +174,10 @@ const router = createBrowserRouter([
       {
         path: "/rejectedappointments",
         element: <RejectedAppointments />
+      },
+      {
+        path: "/serviceslist",
+        element: <ServicesList/>
       },
     ]
 
