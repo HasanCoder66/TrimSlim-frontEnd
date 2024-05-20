@@ -50,12 +50,10 @@ import AddFAQs from "./pages/AddFAQs";
 import Testimonial from "./pages/Testimonial";
 import AddTestimonial from "./pages/AddTestimonial";
 
-import Tiny from "./components/SlidingBanTiny";
-import SlidingBanTiny from "./components/SlidingBanTiny";
+
 import AddSlidingBan from "./pages/AddSlidingBan";
 
-import ServiceTiny from "./components/ServiceTiny";
-import AddService from "./pages/AddService";
+
 import EditHomePage from "./pages/EditHomePage";
 import EditAboutUsPage from "./pages/EditAboutUsPage";
 import EditServicesPage from "./pages/EditServicesPage";
@@ -68,9 +66,9 @@ import EditPrivacyPolicyPage from "./pages/EditPrivacyPolicyPage";
 import EditTermsConditionsPage from "./pages/EditTermsConditionsPage";
 
 
-import AddService from "./pages/AddPro";
+// import AddService from "./pages/AddPro";
 import AddPro from "./pages/AddPro";
-import ServiceTiny from "./components/AddSerTiny";
+// import ServiceTiny from "./components/AddSerTiny";
 import AddSer from "./pages/AddSer";
 import AddTeamMember from "./pages/AddTeamMember";
 
