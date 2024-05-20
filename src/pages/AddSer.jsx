@@ -1,8 +1,8 @@
 import React from 'react'
 import AddSerHeader from '../components/AddSerHead'
-import ServiceTiny from '../components/ServiceTiny'
+import ServiceTiny from '../components/AddSerTiny'
 
-function AddService() {
+function AddSer() {
   return (
     <div>
         <AddSerHeader/>
@@ -11,4 +11,4 @@ function AddService() {
   )
 }
 
-export default AddService
+export default AddSer
