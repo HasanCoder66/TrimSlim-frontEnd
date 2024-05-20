@@ -55,6 +55,11 @@ import SlidingBanTiny from "./components/SlidingBanTiny";
 import AddSlidingBan from "./pages/AddSlidingBan";
 import ServiceTiny from "./components/ServiceTiny";
 import AddService from "./pages/AddService";
+import EditHomePage from "./pages/EditHomePage";
+import EditAboutUsPage from "./pages/EditAboutUsPage";
+import EditServicesPage from "./pages/EditServicesPage";
+import EditAboutUsPageTable from "./components/EditAboutUsPageTable";
+import EditOurTeamPage from "./pages/EditOurTeamPage";
 
 
 const AuthenticatedRoutes = () => {
@@ -229,6 +234,31 @@ const router = createBrowserRouter([
       {
         path: "/addservice",
         element: <AddService/>
+
+      },
+      {
+        path: "/edithomepage",
+        element: <EditHomePage/>
+
+      },
+      {
+        path: "/editaboutuspage",
+        element: <EditAboutUsPage/>
+
+      },
+      {
+        path: "/editservicespage",
+        element: <EditServicesPage/>
+
+      },
+      {
+        path: "/editaboutuspage",
+        element: <EditAboutUsPageTable/>
+
+      },
+      {
+        path: "/editourteampage",
+        element: <EditOurTeamPage/>
 
       },
     ]
