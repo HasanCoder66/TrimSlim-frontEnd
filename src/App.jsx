@@ -40,6 +40,11 @@ import PendingAppointments from "./pages/PendingAppointments"
 import CompAppList from "./pages/CompAppList"
 import ApprovedAppointments from "./pages/ApprovedAppointments"
 import RejectedAppointments from "./pages/RejectedAppointments"
+import Tiny from "./components/SlidingBanTiny";
+import SlidingBanTiny from "./components/SlidingBanTiny";
+import AddSlidingBan from "./pages/AddSlidingBan";
+import ServiceTiny from "./components/ServiceTiny";
+import AddService from "./pages/AddService";
 
 const AuthenticatedRoutes = () => {
   return (
@@ -173,6 +178,14 @@ const router = createBrowserRouter([
       {
         path: "/rejectedappointments",
         element: <RejectedAppointments />
+      },
+      {
+        path: "/addslidingbanner",
+        element: <AddSlidingBan/>
+      },
+      {
+        path: "/addservice",
+        element: <AddService/>
       },
     ]
 
