@@ -54,11 +54,26 @@ import Tiny from "./components/SlidingBanTiny";
 import SlidingBanTiny from "./components/SlidingBanTiny";
 import AddSlidingBan from "./pages/AddSlidingBan";
 
+import ServiceTiny from "./components/ServiceTiny";
+import AddService from "./pages/AddService";
+import EditHomePage from "./pages/EditHomePage";
+import EditAboutUsPage from "./pages/EditAboutUsPage";
+import EditServicesPage from "./pages/EditServicesPage";
+import EditAboutUsPageTable from "./components/EditAboutUsPageTable";
+import EditOurTeamPage from "./pages/EditOurTeamPage";
+import EditProductsPage from "./pages/EditProductsPage";
+import EditContactUsPage from "./pages/EditContactUsPage";
+import EditHipaaCompliantpage from "./pages/EditHipaaCompliantpage";
+import EditPrivacyPolicyPage from "./pages/EditPrivacyPolicyPage";
+import EditTermsConditionsPage from "./pages/EditTermsConditionsPage";
+
+
 import AddService from "./pages/AddPro";
 import AddPro from "./pages/AddPro";
 import ServiceTiny from "./components/AddSerTiny";
 import AddSer from "./pages/AddSer";
 import AddTeamMember from "./pages/AddTeamMember";
+
 
 
 const AuthenticatedRoutes = () => {
@@ -243,6 +258,56 @@ const router = createBrowserRouter([
       {
         path: "/addteam",
         element: <AddTeamMember/>
+
+      },
+      {
+        path: "/edithomepage",
+        element: <EditHomePage/>
+
+      },
+      {
+        path: "/editaboutuspage",
+        element: <EditAboutUsPage/>
+
+      },
+      {
+        path: "/editservicespage",
+        element: <EditServicesPage/>
+
+      },
+      {
+        path: "/editaboutuspage",
+        element: <EditAboutUsPageTable/>
+
+      },
+      {
+        path: "/editourteampage",
+        element: <EditOurTeamPage/>
+
+      },
+      {
+        path: "/editcontactuspage",
+        element: <EditContactUsPage/>
+
+      },
+      {
+        path: "/editproductspage",
+        element: <EditProductsPage/>
+
+      },
+      {
+        path: "/edithipaacompliantpage",
+        element: <EditHipaaCompliantpage/>
+
+      },
+      {
+        path: "/editprivacypolicypage",
+        element: <EditPrivacyPolicyPage/>
+
+      },
+      {
+        path: "/edittermsconditionspage",
+        element: <EditTermsConditionsPage/>
 
       },
     ]

@@ -39,7 +39,7 @@ const AddTestimonialTable = () => {
             </div>
             <div className="flex  flex-row justify-between w-3/4">
             <div className="border border-collapse-700  p-2 m-1">
-             <input type="text" placeholder="Question" className="w-full   outline-none"/>
+             <input type="text" placeholder="Customer Name" className="w-full   outline-none"/>
             </div>
             <div className="flex items-center">
             <div className=" text-center">
@@ -51,7 +51,7 @@ const AddTestimonialTable = () => {
               </label>
             </div>
             <div className="border border-collapse-700  p-2 m-1">
-             <input type="text" placeholder="Question" className="w-full   outline-none"/>
+             <input type="text" placeholder="CEO" className="w-full   outline-none"/>
             </div>
 
 
@@ -73,7 +73,7 @@ const AddTestimonialTable = () => {
               </label>
             </div>
             <div className="border border-collapse-700 w-3/4 p-2 m-1">
-             <textarea type="text" rows={4} placeholder="Answer" className="w-full   outline-none"/>
+             <textarea type="text" rows={4} placeholder="What Customer says " className="w-full   outline-none"/>
             </div>
           </div>
           
