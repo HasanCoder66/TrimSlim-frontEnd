@@ -53,8 +53,12 @@ import AddTestimonial from "./pages/AddTestimonial";
 import Tiny from "./components/SlidingBanTiny";
 import SlidingBanTiny from "./components/SlidingBanTiny";
 import AddSlidingBan from "./pages/AddSlidingBan";
-import ServiceTiny from "./components/ServiceTiny";
-import AddService from "./pages/AddService";
+
+import AddService from "./pages/AddPro";
+import AddPro from "./pages/AddPro";
+import ServiceTiny from "./components/AddSerTiny";
+import AddSer from "./pages/AddSer";
+import AddTeamMember from "./pages/AddTeamMember";
 
 
 const AuthenticatedRoutes = () => {
@@ -227,8 +231,18 @@ const router = createBrowserRouter([
         element: <AddSlidingBan/>
       },
       {
-        path: "/addservice",
-        element: <AddService/>
+        path: "/addpro",
+        element: <AddPro/>
+
+      },
+      {
+        path: "/addser",
+        element: <AddSer/>
+
+      },
+      {
+        path: "/addteam",
+        element: <AddTeamMember/>
 
       },
     ]
