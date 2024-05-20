@@ -41,6 +41,11 @@ import CompAppList from "./pages/CompAppList"
 import ApprovedAppointments from "./pages/ApprovedAppointments"
 import RejectedAppointments from "./pages/RejectedAppointments"
 import ServicesList from "./pages/ServicesList";
+import ReorderServices from "./pages/ReorderServices";
+import TeamMembersList from "./pages/TeamMembersList";
+import ReorderTeamMembers from "./pages/ReorderTeamMembers";
+import FAQs from "./pages/FAQs";
+import AddFAQs from "./pages/AddFAQs";
 
 const AuthenticatedRoutes = () => {
   return (
@@ -178,6 +183,26 @@ const router = createBrowserRouter([
       {
         path: "/serviceslist",
         element: <ServicesList/>
+      },
+      {
+        path: "/reorderservices",
+        element: <ReorderServices/>
+      },
+      {
+        path: "/teammemberslist",
+        element: <TeamMembersList/>
+      },
+      {
+        path: "/reorderteammembers",
+        element: <ReorderTeamMembers/>
+      },
+      {
+        path: "/faqs",
+        element: <FAQs/>
+      },
+      {
+        path: "/addfaqs",
+        element: <AddFAQs/>
       },
     ]
 
